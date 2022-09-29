@@ -32,7 +32,7 @@ public class Baseballs {
 		}
 	}
 
-	public static Baseballs createMyBaseballs(String baseballNumbers) {
+	public static Baseballs createBaseballs(String baseballNumbers) {
 		List<Baseball> baseballs = new ArrayList<>();
 
 		for (int i = 0; i < baseballNumbers.length(); i++) {
@@ -41,7 +41,7 @@ public class Baseballs {
 		return new Baseballs(baseballs);
 	}
 
-	public static Baseballs createComBaseballs() {
+	public static Baseballs createRandomBaseballs() {
 		List<Baseball> baseballs = new ArrayList<>();
 
 		for (int i = 0; i < 3; i++) {
@@ -50,8 +50,27 @@ public class Baseballs {
 		return new Baseballs(baseballs);
 	}
 
-	//TODO: 스트라이크 카운트
-	//TODO: 볼 카운트
+	public int countStrike(Baseballs cmpBaseballs) {
+		int count = 0;
+		for (int i = 0; i < 3; i++) {
+			if (baseballs.get(i).equals(cmpBaseballs.baseballs.get(i))) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	public int countBall(Baseballs cmpBaseballs) {
+		int count = 0;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (baseballs.get(i).equals(cmpBaseballs.baseballs.get(i)) && (i != j)) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 
 	@Override
 	public boolean equals(Object o) {
