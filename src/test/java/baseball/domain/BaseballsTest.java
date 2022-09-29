@@ -32,4 +32,18 @@ class BaseballsTest {
 			Baseballs.createBaseballs("122");
 		}).isInstanceOf(IllegalArgumentException.class);
 	}
+
+	@Test
+	public void 스트라이크_카운트() {
+		Baseballs myBaseballs = Baseballs.createBaseballs("597");
+		Baseballs comBaseballs = Baseballs.createBaseballs("589");
+		assertThat(myBaseballs.countStrike(comBaseballs)).isEqualTo(1);
+	}
+
+	@Test
+	public void 볼_카운트() {
+		Baseballs myBaseballs = Baseballs.createBaseballs("597");
+		Baseballs comBaseballs = Baseballs.createBaseballs("589");
+		assertThat(myBaseballs.countBall(comBaseballs)).isEqualTo(1);
+	}
 }
