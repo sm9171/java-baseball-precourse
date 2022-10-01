@@ -6,7 +6,7 @@ public class Baseball {
 
 	private final int baseballNum;
 	
-	public Baseball(int baseballNum) {
+	private Baseball(int baseballNum) {
 		isValidBaseballNum(baseballNum);
 		this.baseballNum = baseballNum;
 	}
