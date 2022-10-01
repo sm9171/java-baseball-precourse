@@ -7,6 +7,7 @@ public class ResumeOrNot {
 	private final int opinion;
 
 	public ResumeOrNot(String userReply) {
+		isNullValue(userReply);
 		isValidLength(userReply);
 
 		this.opinion = userReply.charAt(0) - '0';
