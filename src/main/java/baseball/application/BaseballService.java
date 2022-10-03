@@ -1,6 +1,7 @@
 package baseball.application;
 
 import baseball.domain.Baseballs;
+import baseball.infrastructure.BaseballMessages;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
@@ -14,10 +15,11 @@ public class BaseballService {
 		do {
 			playBaseballOnce();
 		} while(!isCorrectAnswer());
-		System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료.");
+		System.out.println(BaseballMessages.GAME_SET.getMessage());
 	}
 
 	private void playBaseballOnce() {
+		System.out.print(BaseballMessages.INPUT_NUMBERS.getMessage());
 		userBaseballs = receiveUserBaseballs();
 		BaseballResult baseballResult = BaseballResult.of(computerBaseballs, userBaseballs);
 		System.out.println(baseballResult.getResult());
